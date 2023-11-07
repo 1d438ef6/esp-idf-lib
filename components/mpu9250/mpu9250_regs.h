@@ -1,0 +1,311 @@
+// https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-9250-Register-Map.pdf
+
+#ifndef __MPU9250_REGS_H__
+#define __MPU9250_REGS_H__ 
+
+//accelerometer and gyroskop
+#define MPU9250_REGISTER_SELF_TEST_X_GYRO   (0x00)
+#define MPU9250_REGISTER_SELF_TEST_Y_GYRO   (0x01)
+#define MPU9250_REGISTER_SELF_TEST_Z_GYRO   (0x02)
+#define MPU9250_REGISTER_SELF_TEST_X_ACCEL  (0x0D)
+#define MPU9250_REGISTER_SELF_TEST_Y_ACCEL  (0x0E)
+#define MPU9250_REGISTER_SELF_TEST_Z_ACCEL  (0x0F)
+#define MPU9250_REGISTER_XG_OFFSET_H        (0x13)
+#define MPU9250_REGISTER_XG_OFFSET_L        (0x14)
+#define MPU9250_REGISTER_YG_OFFSET_H        (0x15)
+#define MPU9250_REGISTER_YG_OFFSET_L        (0x16)
+#define MPU9250_REGISTER_ZG_OFFSET_H        (0x17)
+#define MPU9250_REGISTER_ZH_OFFSET_L        (0x18)
+#define MPU9250_REGISTER_SMPLRT_DIV         (0x19)
+#define MPU9250_REGISTER_CONFIG             (0x1A)
+#define MPU9250_REGISTER_GYRO_CONFIG        (0x1B)
+#define MPU9250_REGISTER_ACCEL_CONFIG       (0x1C)
+#define MPU9250_REGISTER_ACCEL_CONFIG_2     (0x1D)
+#define MPU9250_REGISTER_LP_ACCEL_ODR       (0x1E)
+#define MPU9250_REGISTER_WOM_THR            (0x1F)
+#define MPU9250_REGISTER_FIFO_EN            (0x23)
+#define MPU9250_REGISTER_I2C_MST_CTRL       (0x24)
+#define MPU9250_REGISTER_I2C_SLV0_ADDR      (0x25)
+#define MPU9250_REGISTER_I2C_SLV0_REG       (0x26)
+#define MPU9250_REGISTER_I2C_SLV0_CTRL      (0x27)
+#define MPU9250_REGISTER_I2C_SLV1_ADDR      (0x28)
+#define MPU9250_REGISTER_I2C_SLV1_REG       (0x29)
+#define MPU9250_REGISTER_I2C_SLV1_CTRL      (0x2A)
+#define MPU9250_REGISTER_I2C_SLV2_ADDR      (0x2B)
+#define MPU9250_REGISTER_I2C_SLV2_REG       (0x2C)
+#define MPU9250_REGISTER_I2C_SLV2_CTRL      (0x2D)
+#define MPU9250_REGISTER_I2C_SLV3_ADDR      (0x2E)
+#define MPU9250_REGISTER_I2C_SLV3_REG       (0x2F)
+#define MPU9250_REGISTER_I2C_SLV3_CTRL      (0x30)
+#define MPU9250_REGISTER_I2C_SLV4_ADDR      (0x31)
+#define MPU9250_REGISTER_I2C_SLV4_REG       (0x32)
+#define MPU9250_REGISTER_I2C_SLV4_DO        (0x33)
+#define MPU9250_REGISTER_I2C_SLV4_CTRL      (0x34)
+#define MPU9250_REGISTER_I2C_SLV4_DI        (0x35)
+#define MPU9250_REGISTER_I2C_MST_STATUS     (0x36)
+#define MPU9250_REGISTER_INT_PIN_CFG        (0x37)
+#define MPU9250_REGISTER_INT_ENABLE         (0x38)
+#define MPU9250_REGISTER_INT_STATUS         (0x3A)
+#define MPU9250_REGISTER_ACCEL_xOUT_H       (0x3B)
+#define MPU9250_REGISTER_ACCEL_XOUT_L       (0x3C)
+#define MPU9250_REGISTER_ACCEL_YOUT_H       (0x3D)
+#define MPU9250_REGISTER_ACCEL_YOUT_L       (0x3E)
+#define MPU9250_REGISTER_ACCEL_ZOUT_H       (0x3F)
+#define MPU9250_REGISTER_ACCEL_ZOUT_L       (0x40)
+#define MPU9250_REGISTER_TEMP_OUT_H         (0x41)
+#define MPU9250_REGISTER_TEMP_OUT_L         (0x42)
+#define MPU9250_REGISTER_GYRO_xOUT_H        (0x43)
+#define MPU9250_REGISTER_GYRO_XOUT_L        (0x44)
+#define MPU9250_REGISTER_GYRO_YOUT_H        (0x45)
+#define MPU9250_REGISTER_GYRO_YOUT_L        (0x46)
+#define MPU9250_REGISTER_GYRO_ZOUT_H        (0x47)
+#define MPU9250_REGISTER_GYRO_ZOUT_L        (0x48)
+#define MPU9250_REGISTER_EXT_SENS_DATA_00   (0x49)
+#define MPU9250_REGISTER_EXT_SENS_DATA_01   (0x4A)
+#define MPU9250_REGISTER_EXT_SENS_DATA_02   (0x4B)
+#define MPU9250_REGISTER_EXT_SENS_DATA_03   (0x4C)
+#define MPU9250_REGISTER_EXT_SENS_DATA_04   (0x4D)
+#define MPU9250_REGISTER_EXT_SENS_DATA_05   (0x4E)
+#define MPU9250_REGISTER_EXT_SENS_DATA_06   (0x4F)
+#define MPU9250_REGISTER_EXT_SENS_DATA_07   (0x50)
+#define MPU9250_REGISTER_EXT_SENS_DATA_08   (0x51)
+#define MPU9250_REGISTER_EXT_SENS_DATA_09   (0x52)
+#define MPU9250_REGISTER_EXT_SENS_DATA_10   (0x53)
+#define MPU9250_REGISTER_EXT_SENS_DATA_11   (0x54)
+#define MPU9250_REGISTER_EXT_SENS_DATA_12   (0x55)
+#define MPU9250_REGISTER_EXT_SENS_DATA_13   (0x56)
+#define MPU9250_REGISTER_EXT_SENS_DATA_14   (0x57)
+#define MPU9250_REGISTER_EXT_SENS_DATA_15   (0x58)
+#define MPU9250_REGISTER_EXT_SENS_DATA_16   (0x59)
+#define MPU9250_REGISTER_EXT_SENS_DATA_17   (0x5A)
+#define MPU9250_REGISTER_EXT_SENS_DATA_18   (0x5B)
+#define MPU9250_REGISTER_EXT_SENS_DATA_19   (0x5C)
+#define MPU9250_REGISTER_EXT_SENS_DATA_20   (0x5D)
+#define MPU9250_REGISTER_EXT_SENS_DATA_21   (0x5E)
+#define MPU9250_REGISTER_EXT_SENS_DATA_22   (0x5F)
+#define MPU9250_REGISTER_EXT_SENS_DATA_23   (0x60)
+#define MPU9250_REGISTER_I2C_SLV0_DO        (0x63)
+#define MPU9250_REGISTER_I2C_SLV1_DO        (0x64)
+#define MPU9250_REGISTER_I2C_SLV2_DO        (0x65)
+#define MPU9250_REGISTER_I2C_SLV3_DO        (0x66)
+#define MPU9250_REGISTER_I2C_MST_DELAY_CTRL (0x67)
+#define MPU9250_REGISTER_SIGNAL_PATH_RESET  (0x68)
+#define MPU9250_REGISTER_MOT_DETECT_CTRL    (0x69)
+#define MPU9250_REGISTER_USER_CTRL          (0x6A)
+#define MPU9250_REGISTER_PWR_MGMT_1         (0x6B)
+#define MPU9250_REGISTER_PWR_MGMT_2         (0x6C)
+#define MPU9250_REGISTER_FIFO_COUNTH        (0x72)
+#define MPU9250_REGISTER_FIFO_COUNTL        (0x73)
+#define MPU9250_REGISTER_FIFO_R_W           (0x74)
+#define MPU9250_REGISTER_WHO_AM_I           (0x75)
+#define MPU9250_REGISTER_XA_OFFSET_H        (0x77)
+#define MPU9250_REGISTER_XA_OFFSET_L        (0x78)
+#define MPU9250_REGISTER_YA_OFFSET_H        (0x7A)
+#define MPU9250_REGISTER_YA_OFFSET_L        (0x7B)
+#define MPU9250_REGISTER_ZA_OFFSET_H        (0x7D)
+#define MPU9250_REGISTER_ZA_OFFSET_L        (0x7E)
+
+
+//AK8963
+#define AK8963_REGISTER_WHO_AM_I            (0x00)
+#define AK8963_REGISTER_INFO                (0x01)
+#define AK8963_REGISTER_STATUS_1            (0x02)
+#define AK8963_REGISTER_HXL                 (0x03)
+#define AK8963_REGISTER_HXH                 (0x04)
+#define AK8963_REGISTER_HYL                 (0x05)
+#define AK8963_REGISTER_HYH                 (0x06)
+#define AK8963_REGISTER_HZL                 (0x07)
+#define AK8963_REGISTER_HZH                 (0x08)
+#define AK8963_REGISTER_STATUS_2            (0x09)
+#define AK8963_REGISTER_CNTL                (0x0A)
+// #define AK8963_REGISTER_RSV                 (0x0B) // reserved, do not use
+#define AK8963_REGISTER_SELF_TEST           (0x0C)
+// #define AK8963_REGISTER_TEST_1              (0x0D)   // reserved, do not use
+// #define AK8963_REGISTER_TEST_2              (0x0E)   // reserved, do not use
+#define AK8963_REGISTER_I2C_DISABLE         (0x0F)
+#define AK8963_REGISTER_ASAX                (0x10)  // X-axis sensivity adjustment
+#define AK8963_REGISTER_ASAY                (0x11)  // Y-axis sensivity adjustment
+#define AK8963_REGISTER_ASAZ                (0x12)  // Z-axis sensivity adjustment
+
+
+// Bit and length defines for CONFIG register:
+#define MPU9250_FIFO_MODE_BIT      (6)
+#define MPU9250_EXT_SYNC_SET_BIT   (3)
+#define MPU9250_EXT_SYNC_SET_MASK  (7 << MPU9250_REGISTER_EXT_SYNC_SET_BIT)
+#define MPU9250_DLPF_CFG_BIT       (0)
+#define MPU9250_DLPF_CFG_MASK      (7 << MPU9250_REGISTER_DLPF_CFG_BIT)
+
+// Bit and length defines for GYRO_CONFIG register:
+#define MPU9250_XGYRO_CT_EN_BIT        (7)
+#define MPU9250_YGYRO_CT_EN_BIT        (6)
+#define MPU9250_ZGYRO_CT_EN_BIT        (5)
+#define MPU9250_GYRO_FS_SEL_BIT        (3)
+#define MPU9250_GYRO_FS_SEL_MASK       (3 << MPU9250_REGISTER_GYRO_FS_SEL_BIT)
+#define MPU9250_GYRO_FCHOICE_B_BIT     (0)
+#define MPU9250_GYRO_FCHOICE_B_MASK    (3 << MPU9250_REGISTER_GYRO_FCHOICE_B_BIT)
+
+// Bit and length defines for ACCEL_CONFIG register:
+#define MPU9250_ACCEL_CONFIG_AX_ST_EN_BIT      (7)
+#define MPU9250_ACCEL_CONFIG_AY_ST_EN_BIT      (6)
+#define MPU9250_ACCEL_CONFIG_AZ_ST_EN_BIT      (5)
+#define MPU9250_ACCEL_CONFIG_AFS_SEL_BIT       (3)
+#define MPU9250_ACCEL_CONFIG_AFS_SEL_MASK      (3 << MPU9250_REGISTER_ACCEL_CONFIG_AFS_SEL_BIT)
+#define MPU9250_ACCEL_CONFIG_FCHOICE_B_BIT     (2)
+#define MPU9250_ACCEL_CONFIG_FCHOICE_B_MASK    (3 << MPU9250_REGISTER_ACCEL_CONFIG_FCHOICE_B_BIT)
+#define MPU9250_ACCEL_CONFIG_DLPF_CFG_BIT      (0)
+#define MPU9250_ACCEL_CONFIG_DLPF_CFG_MASK     (3 << MPU9250_REGISTER_ACCEL_CONFIG_DLPF_CFG_BIT)
+
+// Bit and length defines for LP_ACCEL_ODR register:
+#define MPU9250_LPOSC_CLKSEL_BIT   (0)
+#define MPU9250_LPOSC_CLKSEL_MASK  (15 << MPU9250_REGISTER_LPOSC_CLKSEL_BIT)
+
+// Bit and length defines for FIFO_EN register:
+#define MPU9250_FIFO_TEMP_FIFO_EN_BIT   (7)
+#define MPU9250_FIFO_GYRO_XO_UT_BIT     (6)
+#define MPU9250_FIFO_GYRO_YO_UT_BIT     (5)
+#define MPU9250_FIFO_GYRO_ZO_UT_BIT     (4)
+#define MPU9250_FIFO_ACCEL_BIT          (3)
+#define MPU9250_FIFO_SLV2_BIT           (2)   
+#define MPU9250_FIFO_SLV1_BIT           (1)
+#define MPU9250_FIFO_SLV0_BIT           (0)
+
+// Bit and length defines for I2C_MST_CTRL register:
+#define MPU9250_MULT_MST_EN_BIT    (7)
+#define MPU9250_WAIT_FOR_ES_BIT    (6)
+#define MPU9250_SLV3_FIFO_EN_BIT   (5)
+#define MPU9250_I2C_MST_P_NSR_BIT  (4)
+#define MPU9250_I2C_MST_CLK_BIT    (0)
+#define MPU9250_I2C_MST_CLK_MASK   (15 << MPU9250_REGISTER_I2C_MST_CLK_BIT)
+
+// Bit and length defines for I2C Slave Address register:
+#define MPU9250_I2C_SLV0_RNW_BIT   (7)
+#define MPU9250_I2C_SLV0_ADDR_BIT  (0)
+#define MPU9250_I2C_SLV0_ADDR_MASK (127 << MPU9250_REGISTER_I2C_SLV0_ADDR_BIT)
+
+#define MPU9250_I2C_SLV1_RNW_BIT   (7)
+#define MPU9250_I2C_SLV1_ADDR_BIT  (0)
+#define MPU9250_I2C_SLV1_ADDR_MASK (127 << MPU9250_REGISTER_I2C_SLV0_ADDR_BIT)
+
+#define MPU9250_I2C_SLV2_RNW_BIT   (7)
+#define MPU9250_I2C_SLV2_ADDR_BIT  (0)
+#define MPU9250_I2C_SLV2_ADDR_MASK (127 << MPU9250_REGISTER_I2C_SLV0_ADDR_BIT)
+
+#define MPU9250_I2C_SLV3_RNW_BIT   (7)
+#define MPU9250_I2C_SLV3_ADDR_BIT  (0)
+#define MPU9250_I2C_SLV3_ADDR_MASK (127 << MPU9250_REGISTER_I2C_SLV0_ADDR_BIT)
+
+#define MPU9250_I2C_SLV4_RNW_BIT   (7)
+#define MPU9250_I2C_SLV4_ADDR_BIT  (0)
+#define MPU9250_I2C_SLV4_ADDR_MASK (127 << MPU9250_REGISTER_I2C_SLV0_ADDR_BIT)
+
+// Bit and length defines for I2C slave control register:
+#define MPU9250_I2C_SLV0_EN_BIT        (7)
+#define MPU9250_I2C_SLV0_BYTE_SW_BIT   (6)       
+#define MPU9250_I2C_SLV0_REG_DIS_BIT   (5)
+#define MPU9250_I2C_SLV0_GRP_BIT       (4)
+#define MPU9250_I2C_SLV0_LENG_BIT      (0)
+#define MPU9250_I2C_SLV0_LENG_MASK     (15 << MPU9250_REGISTER_I2C_SLV0_LENG_BIT)
+
+#define MPU9250_I2C_SLV1_EN_BIT        (7)
+#define MPU9250_I2C_SLV1_BYTE_SW_BIT   (6)       
+#define MPU9250_I2C_SLV1_REG_DIS_BIT   (5)
+#define MPU9250_I2C_SLV1_GRP_BIT       (4)
+#define MPU9250_I2C_SLV1_LENG_BIT      (0)
+#define MPU9250_I2C_SLV1_LENG_MASK     (15 << MPU9250_REGISTER_I2C_SLV0_LENG_BIT)
+
+#define MPU9250_I2C_SLV2_EN_BIT        (7)
+#define MPU9250_I2C_SLV2_BYTE_SW_BIT   (6)       
+#define MPU9250_I2C_SLV2_REG_DIS_BIT   (5)
+#define MPU9250_I2C_SLV2_GRP_BIT       (4)
+#define MPU9250_I2C_SLV2_LENG_BIT      (0)
+#define MPU9250_I2C_SLV2_LENG_MASK     (15 << MPU9250_REGISTER_I2C_SLV0_LENG_BIT)
+
+#define MPU9250_I2C_SLV3_EN_BIT        (7)
+#define MPU9250_I2C_SLV3_BYTE_SW_BIT   (6)       
+#define MPU9250_I2C_SLV3_REG_DIS_BIT   (5)
+#define MPU9250_I2C_SLV3_GRP_BIT       (4)
+#define MPU9250_I2C_SLV3_LENG_BIT      (0)
+#define MPU9250_I2C_SLV3_LENG_MASK     (15 << MPU9250_REGISTER_I2C_SLV0_LENG_BIT)
+
+#define MPU9250_I2C_SLV4_EN_BIT            (7)
+#define MPU9250_I2C_SLV4_DONE_INT_EN_BIT   (6)       
+#define MPU9250_I2C_SLV4_REG_DIS_BIT       (5)
+#define MPU9250_I2C_SLV4_LENG_BIT          (0)
+#define MPU9250_I2C_SLV4_LENG_MASK         (31 << MPU9250_REGISTER_I2C_SLV0_LENG_BIT)
+
+// Bit and length defines for I2C_MST_STATUS register:
+#define MPU9250_I2C_PASS_TROUGH_BIT    (7)
+#define MPU9250_I2C_SLV4_DONE_BIT      (6)
+#define MPU9250_I2C_LOST_ARB_BIT       (5)
+#define MPU9250_I2C_SLV4_NACK_BIT      (4)
+#define MPU9250_I2C_SLV3_NACK_BIT      (3)
+#define MPU9250_I2C_SLV2_NACK_BIT      (2)
+#define MPU9250_I2C_SLV1_NACK_BIT      (1)
+#define MPU9250_I2C_SLV0_NACK_BIT      (0)
+
+// Bit and length defines for INT_PIN_CFG register:
+#define MPU9250_INT_ACTL_BIT               (7)
+#define MPU9250_INT_OPEN_BIT               (6)
+#define MPU9250_INT_LATCH_INT_EN_BIT       (5)
+#define MPU9250_INT_INT_ANYRD_2CLEAR_BIT   (4)
+#define MPU9250_INT_ACTL_FSYNC_BIT         (3)
+#define MPU9250_INT_FSYNC_INT_MODE_EN_BIT  (2)
+#define MPU9250_INT_BYPASS_EN_BIT          (1)
+
+// Bit and length defines for INT_ENABLE register:
+#define MPU9250_INT_WOM_EN_BIT         (6)
+#define MPU9250_INT_FIFO_OFLOW_EN_BIT  (4)
+#define MPU9250_INT_FSYNC_INT_EN_BIT   (3)
+#define MPU9250_INT_RAW_RDY_EN_BIT     (0)
+
+// Bit and length defines for INT_STATUS register:
+#define MPU9250_INT_WOM_INT_BIT            (6)
+#define MPU9250_INT_FIFO_OFLOW_INT_BIT     (4)
+#define MPU9250_INT_FSYNC_INT_BIT          (3)
+#define MPU9250_INT_RAW_DATA_RDY_INT_BIT   (0)
+
+// Bit and length defines for I2C_MST_DELAY_CTRL register:
+#define MPU9250_I2C_DELAY_ES_SHADOW_BIT    (7)
+#define MPU9250_I2C_SLV4_DLY_EN_BIT        (4)
+#define MPU9250_I2C_SLV3_DLY_EN_BIT        (3)
+#define MPU9250_I2C_SLV2_DLY_EN_BIT        (2)
+#define MPU9250_I2C_SLV1_DLY_EN_BIT        (1)
+#define MPU9250_I2C_SLV0_DLY_EN_BIT        (0)
+
+// Bit and length defines for SIGNAL_PATH_RESET register:
+#define MPU9250_GYRO_RST_BIT   (2)
+#define MPU9250_ACCEL_RST_BIT  (1)
+#define MPU9250_TEMP_RST_BIT  (0)
+
+// Bit and length defines for MOT_DETECT_CTRL register:
+#define MPU9250_ACCEL_INT_EL_EN_BIT    (7)
+#define MPU9250_ACCEL_INT_EL_MODE_BIT  (6)
+
+// Bit and length defines for USER_CTRL register:
+#define MPU9250_FIFO_EN_BIT        (6)
+#define MPU9250_I2C_MST_EN_BIT     (5)
+#define MPU9250_I2C_IF_DIS_BIT     (4)
+#define MPU9250_FIFO_RST_BIT       (2)
+#define MPU9250_I2C_MST_RST_BIT    (1)
+#define MPU9250_SIG_COND_RST_BIT   (0)
+
+// Bit and length defines for PWR_MGMT register:
+#define MPU9250_H_RESET_BIT        (7)
+#define MPU9250_SLEEP_BIT          (6)
+#define MPU9250_CYCLE_BIT          (5)
+#define MPU9250_GYRO_STANDBY_BIT   (4)
+#define MPU9250_PD_PTAT_BIT        (3)
+#define MPU9250_CLKSEL_BIT         (0)
+#define MPU9250_CLKSEL_MASK        (7 << MPU9250_CLKSEL_BIT)
+
+#define MPU9250_DIS_XA_BIT         (5)
+#define MPU9250_DIS_YA_BIT         (4)
+#define MPU9250_DIS_ZA_BIT         (3)
+#define MPU9250_DIS_XG_BIT         (2)
+#define MPU9250_DIS_YG_BIT         (1)
+#define MPU9250_DIS_ZG_BIT         (0)
+
+
+
+
+#endif

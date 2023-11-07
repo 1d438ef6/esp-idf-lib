@@ -1,0 +1,21 @@
+name: mpu9250
+description: Driver for MPU9250 9-axis MotionTracking device
+version: 0.0.1
+groups:
+  - imu
+code_owners:
+  - 1d438ef6
+depends:
+  - log
+  - esp_idf_lib_helpers
+  - i2cdev
+thread_safe: no
+targets:
+  - esp32
+  - esp8266
+  - esp32s2
+  - esp32c3
+  - esp32s3
+license: 
+copyrights:
+  
